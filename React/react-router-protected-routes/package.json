@@ -1,0 +1,19 @@
+{
+  "name": "react-router-protected-routes",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Teaching repo showing how to implement protected routes with React Router and conditional rendering.",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.23.1"
+  },
+  "devDependencies": {
+    "vite": "^5.0.0"
+  }
+}

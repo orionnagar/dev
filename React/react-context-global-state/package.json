@@ -1,0 +1,18 @@
+{
+  "name": "react-context-global-state",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Teaching repo showing how to use React Context to manage global state cleanly without prop drilling.",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "vite": "^5.0.0"
+  }
+}
