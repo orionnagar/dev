@@ -51,37 +51,66 @@ Error boundaries and resilience techniques
 
 Real-time and data-fetching architectures
 
-📚 Lesson Index
-#	Lesson	Core Concept
-1	react-render-cycle-visualized	How React reconciles and renders components
+
+
+1	react-render-cycle-visualized - How React reconciles and renders components
+
 2	react-useeffect-cleanup-patterns	Proper effect teardown and stale closure prevention
+
 3	react-state-vs-props-boundaries	State ownership and data flow clarity
+
 4	react-context-global-state	Context API patterns and composition
+
 5	react-controlled-vs-uncontrolled-inputs	Input synchronization and validation
+
 6	react-component-composition-patterns	Compound components and slot patterns
+
 7	react-custom-hooks-debounce-throttle	Performance and user experience smoothing
+
 8	react-error-boundary-pattern	Graceful UI degradation under failure
+
 9	react-state-machine-usereducer	Predictable state transitions
+
 10	react-suspense-data-fetching	Concurrent rendering and async boundaries
+
 11	react-performance-optimization	Memoization, lazy loading, and profiling
+
 12	react-router-protected-routes	Auth gating and route control
+
 13	react-forms-zod-validation	Schema-based form validation
+
 14	react-animations-framer-motion	Declarative motion and UI feedback
+
 15	react-fetch-patterns-swr-tanstack	Data caching and revalidation
+
 16	react-graphql-client-patterns	Query composition and caching
+
 17	react-table-rendering-large-data	Virtualization and performance
+
 18	react-optimistic-ui-updates	Instant feedback with eventual consistency
+
 19	react-realtime-websockets	Real-time event updates
+
 20	react-auth-context-jwt-flow	End-to-end authentication pattern
+
 21	react-rbac-role-based-ui	Role-based rendering and permissions
+
 22	react-error-logging-sentry	Observability and error capture
+
 23	react-ai-chat-interface	LLM-connected chat UX
+
 24	react-hooks-usecallback-vs-usememo	Avoiding unnecessary re-renders
+
 25	react-signal-performance-pattern	Fine-grained state reactivity
+
 26	react-concurrent-rendering-demo	React 18 concurrency insights
+
 27	react-hoc-vs-hooks-pattern	Migration from HOCs to hooks
+
 28	react-dom-diff-visualization	Understanding the virtual DOM
+
 29	react-design-system-template	Component library starter
+
 30	react-unit-testing-vitest-patterns	Unit testing in modern React
 
  Versioning Convention
