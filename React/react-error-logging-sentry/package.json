@@ -1,0 +1,20 @@
+{
+  "name": "react-error-logging-sentry",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Teaching repo showing how to capture and report React errors using Sentry SDK.",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "@sentry/react": "^8.21.0",
+    "@sentry/tracing": "^8.21.0"
+  },
+  "devDependencies": {
+    "vite": "^5.0.0"
+  }
+}
