@@ -1,31 +1,30 @@
 # ⚛️ react-optimistic-ui-updates
 
 ### Purpose
-Demonstrate **optimistic updates** — updating UI immediately before waiting for the backend to confirm success.
+Demonstrate **optimistic UI updates** with rollback on failure using React Query mutations.
 
 ### Concept
-1. Save current state (for rollback).  
-2. Update UI instantly (optimistic).  
-3. Perform async API call.  
-4. If failure → rollback to previous state.
+- Update the UI instantly before awaiting server confirmation.  
+- Keep a snapshot (`onMutate`) to restore if the network call fails.  
+- Roll back on `onError`, confirm on `onSuccess`.
 
 ### Run
 npm install  
 npm run dev
 
 ### Teaching Notes
-- Makes apps feel faster and more responsive.  
-- Common in social, chat, and e-commerce UIs.  
-- Combine with libraries like React Query or SWR for built-in mutation rollback.
+- Press **Add Todo** — a new item appears instantly.  
+- Occasionally the fake API fails (20% chance).  
+- Observe rollback behavior restoring previous state.  
+- Provides illusion of instant response while maintaining data integrity.
 
 ### 📝 TODO
-- [ ] Add failure banner component.  
-- [ ] Integrate with TanStack `useMutation` for real rollback handling.  
-- [ ] Add animation when rollback occurs.  
-- [ ] Persist optimistic state in context for multi-component sync.
+- [ ] Add delete + update optimistic flows.  
+- [ ] Visualize rollback animation.  
+- [ ] Integrate real REST or GraphQL API.  
+- [ ] Combine with toast notifications for user feedback.
 
 ### Key Takeaway
-Optimistic UIs improve perceived performance and user trust.
-Just ensure rollback logic is solid for failure cases.
+Optimistic updates dramatically improve perceived speed while keeping data consistent and safe.
 
 © 2025 Suresh Nagar · MIT License

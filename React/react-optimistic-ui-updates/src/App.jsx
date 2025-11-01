@@ -1,79 +1,75 @@
+import { QueryClient, QueryClientProvider, useMutation, useQueryClient } from "@tanstack/react-query";
 import { useState } from "react";
+import "./styles.css";
 
 /**
- * Optimistic UI Demo
- * ------------------
- * This simulates a "like" button that updates instantly
- * while pretending to call an API.  If the fake request fails,
- * the UI rolls back automatically.
+ * Optimistic UI Updates Demo
+ * --------------------------
+ * Instantly updates UI before network response, then confirms or rolls back.
  */
 
-export default function App() {
-  const [likes, setLikes] = useState(10);
-  const [pending, setPending] = useState(false);
+const queryClient = new QueryClient();
 
-  async function handleLike() {
-    if (pending) return;
-    setPending(true);
-
-    // optimistic update first
-    const previous = likes;
-    setLikes(likes + 1);
-
-    try {
-      // simulate network latency + random failure
-      await fakeApi();
-      console.log("✅ Server confirmed update");
-    } catch (err) {
-      console.log("❌ API failed, rolling back");
-      setLikes(previous); // rollback
-    } finally {
-      setPending(false);
-    }
-  }
-
-  return (
-    <div style={styles.container}>
-      <h1>React Optimistic UI Updates</h1>
-      <p>Instantly update UI, rollback if server rejects.</p>
-      <button
-        onClick={handleLike}
-        disabled={pending}
-        style={{
-          ...styles.button,
-          background: pending ? "#aaa" : "#007AFF"
-        }}
-      >
-        👍 Like ({likes})
-      </button>
-      {pending && <p style={styles.info}>Saving...</p>}
-    </div>
-  );
-}
-
-// simulate API success/failure
-function fakeApi() {
+function fakeServerUpdate(newTodo) {
   return new Promise((resolve, reject) => {
-    const ms = 1200;
     setTimeout(() => {
-      Math.random() > 0.3 ? resolve() : reject(new Error("Network error"));
-    }, ms);
+      // 20% chance of simulated failure
+      Math.random() > 0.2 ? resolve(newTodo) : reject(new Error("Server error!"));
+    }, 1000);
   });
 }
 
-const styles = {
-  container: {
-    fontFamily: "system-ui, sans-serif",
-    textAlign: "center",
-    marginTop: 60
-  },
-  button: {
-    padding: "10px 20px",
-    border: "none",
-    borderRadius: 8,
-    color: "white",
-    fontSize: 16,
-    cursor: "pointer"
-  },
-  info: { color: "#666", marginTop: 10 }
-};
+export default function App() {
+  return (
+    <QueryClientProvider client={queryClient}>
+      <TodoList />
+    </QueryClientProvider>
+  );
+}
+
+function TodoList() {
+  const queryClient = useQueryClient();
+  const [todos, setTodos] = useState([{ id: 1, text: "Learn React" }, { id: 2, text: "Ship Projects" }]);
+
+  const mutation = useMutation({
+    mutationFn: fakeServerUpdate,
+    onMutate: async (newTodo) => {
+      await queryClient.cancelQueries({ queryKey: ["todos"] });
+      const previous = [...todos];
+      setTodos((old) => [...old, newTodo]);
+      return { previous };
+    },
+    onError: (err, newTodo, context) => {
+      console.warn("❌ Rollback due to:", err.message);
+      setTodos(context.previous);
+    },
+    onSuccess: () => console.log("✅ Server confirmed update"),
+    onSettled: () => queryClient.invalidateQueries({ queryKey: ["todos"] })
+  });
+
+  const handleAdd = () => {
+    const newTodo = { id: Date.now(), text: "New Todo " + Date.now().toString().slice(-4) };
+    mutation.mutate(newTodo);
+  };
+
+  return (
+    <div className="container">
+      <h1>React Optimistic UI Updates</h1>
+      <p>Instant feedback + rollback safety for async actions.</p>
+
+      <button className="button" onClick={handleAdd} disabled={mutation.isPending}>
+        {mutation.isPending ? "⏳ Adding..." : "➕ Add Todo"}
+      </button>
+
+      <ul className="list">
+        {todos.map((t) => (
+          <li key={t.id} className="item">
+            {t.text}
+          </li>
+        ))}
+      </ul>
+
+      {mutation.isError && <p className="error">Server failed — reverted change.</p>}
+    </div>
+  );
+}

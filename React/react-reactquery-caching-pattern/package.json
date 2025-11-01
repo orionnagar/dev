@@ -1,8 +1,8 @@
 {
-  "name": "react-optimistic-ui-updates",
+  "name": "react-reactquery-caching-pattern",
   "private": true,
   "version": "1.0.0",
-  "description": "Teaching repo demonstrating optimistic UI updates with rollback on network failure.",
+  "description": "Teaching repo demonstrating data caching and background refetching in React using TanStack Query (React Query).",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

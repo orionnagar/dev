@@ -1,8 +1,8 @@
 {
-  "name": "react-optimistic-ui-updates",
+  "name": "react-virtualized-infinite-scroll",
   "private": true,
   "version": "1.0.0",
-  "description": "Teaching repo demonstrating optimistic UI updates with rollback on network failure.",
+  "description": "Teaching repo demonstrating infinite scrolling with react-window virtualization and lazy data loading.",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -11,8 +11,7 @@
   "dependencies": {
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "@tanstack/react-query": "^5.56.2",
-    "axios": "^1.7.4"
+    "react-window": "^1.8.10"
   },
   "devDependencies": {
     "vite": "^5.0.0"

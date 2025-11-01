@@ -1,8 +1,8 @@
 {
-  "name": "react-optimistic-ui-updates",
+  "name": "react-concurrent-suspense-patterns",
   "private": true,
   "version": "1.0.0",
-  "description": "Teaching repo demonstrating optimistic UI updates with rollback on network failure.",
+  "description": "Teaching repo demonstrating concurrent rendering and Suspense transitions in React 18.",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -10,9 +10,7 @@
   },
   "dependencies": {
     "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "@tanstack/react-query": "^5.56.2",
-    "axios": "^1.7.4"
+    "react-dom": "^18.3.1"
   },
   "devDependencies": {
     "vite": "^5.0.0"
