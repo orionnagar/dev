@@ -1,0 +1,21 @@
+{
+  "name": "react-graphql-client-patterns",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Teaching repo comparing Apollo Client and urql for GraphQL data fetching in React.",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "@apollo/client": "^3.11.0",
+    "graphql": "^16.9.0",
+    "urql": "^4.0.6"
+  },
+  "devDependencies": {
+    "vite": "^5.0.0"
+  }
+}
