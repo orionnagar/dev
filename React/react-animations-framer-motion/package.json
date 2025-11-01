@@ -1,0 +1,19 @@
+{
+  "name": "react-animations-framer-motion",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Teaching repo showing basic animations and transitions using Framer Motion in React.",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "framer-motion": "^11.0.0"
+  },
+  "devDependencies": {
+    "vite": "^5.0.0"
+  }
+}
