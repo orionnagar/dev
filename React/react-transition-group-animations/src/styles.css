@@ -1,0 +1,60 @@
+.container {
+  font-family: system-ui, sans-serif;
+  text-align: center;
+  max-width: 600px;
+  margin: 40px auto;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  padding: 20px;
+  background: #fefefe;
+}
+.button {
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: none;
+  background: #007AFF;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+.list {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 8px 12px;
+  background: #fafafa;
+  transition: all 0.3s ease;
+}
+.remove {
+  border: none;
+  background: #dc3545;
+  color: white;
+  border-radius: 6px;
+  padding: 4px 8px;
+  cursor: pointer;
+}
+.fade-enter {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+.fade-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 300ms ease;
+}
+.fade-exit {
+  opacity: 1;
+}
+.fade-exit-active {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 300ms ease;
+}

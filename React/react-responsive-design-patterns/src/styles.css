@@ -1,0 +1,41 @@
+.container {
+  font-family: system-ui, sans-serif;
+  text-align: center;
+  margin: 40px auto;
+  max-width: 800px;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  padding: 20px;
+  background: #fefefe;
+}
+.card {
+  border-radius: 12px;
+  padding: 20px;
+  margin-top: 20px;
+  transition: all 0.3s ease;
+  color: #fff;
+}
+.card.mobile {
+  background: linear-gradient(135deg, #007aff, #00b4ff);
+}
+.card.tablet {
+  background: linear-gradient(135deg, #f39c12, #f1c40f);
+}
+.card.desktop {
+  background: linear-gradient(135deg, #2ecc71, #27ae60);
+}
+@media (max-width: 600px) {
+  .card {
+    font-size: 14px;
+  }
+}
+@media (min-width: 601px) and (max-width: 1024px) {
+  .card {
+    font-size: 16px;
+  }
+}
+@media (min-width: 1025px) {
+  .card {
+    font-size: 18px;
+  }
+}

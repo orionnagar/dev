@@ -1,0 +1,18 @@
+{
+  "name": "react-offscreen-rendering-pattern",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Teaching repo demonstrating offscreen rendering in React for instant component reveal.",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "vite": "^5.0.0"
+  }
+}

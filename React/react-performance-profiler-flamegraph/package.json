@@ -1,0 +1,18 @@
+{
+  "name": "react-performance-profiler-flamegraph",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Teaching repo demonstrating React Profiler API and flamegraph performance measurement.",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "vite": "^5.0.0"
+  }
+}
